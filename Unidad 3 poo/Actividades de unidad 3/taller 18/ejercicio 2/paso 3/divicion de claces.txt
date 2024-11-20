@@ -1,0 +1,23 @@
+public class CajeroAutomatico implements Retiro, Transferencia {
+    @Override
+    public void realizarRetiro(double monto) {
+        System.out.println("Retiro de: $" + monto + " realizado desde el cajero automático.");
+    }
+
+    @Override
+    public void realizarTransferencia(String cuentaDestino, double monto) {
+        System.out.println("Transferencia de: $" + monto + " a la cuenta: " + cuentaDestino + " realizada desde el cajero automático.");
+    }
+}
+
+public class CajeroAutomatico implements Retiro, Transferencia {
+    @Override
+    public void realizarRetiro(double monto) {
+        System.out.println("Retiro de: $" + monto + " realizado desde el cajero automático.");
+    }
+
+    @Override
+    public void realizarTransferencia(String cuentaDestino, double monto) {
+        System.out.println("Transferencia de: $" + monto + " a la cuenta: " + cuentaDestino + " realizada desde el cajero automático.");
+    }
+}

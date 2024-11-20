@@ -1,0 +1,5 @@
+public interface Mantenimiento {
+    void reparar(String equipo);
+    void limpiar(String area);
+}
+ 

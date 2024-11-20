@@ -1,0 +1,46 @@
+// Interfaz GeneradorReporte
+public interface GeneradorReporte {
+    void generar(String datos);
+}
+
+// Implementación PDF
+public class ReportePDF implements GeneradorReporte {
+    @Override
+    public void generar(String datos) {
+        System.out.println("Generando reporte PDF con datos: " + datos);
+    }
+}
+
+// Implementación Excel
+public class ReporteExcel implements GeneradorReporte {
+    @Override
+    public void generar(String datos) {
+        System.out.println("Generando reporte Excel con datos: " + datos);
+    }
+}
+
+// Gestor de Reportes
+public class GestorReportes {
+    private final GeneradorReporte generadorReporte;
+
+    public GestorReportes(GeneradorReporte generadorReporte) {
+        this.generadorReporte = generadorReporte;
+    }
+
+    public void procesarReporte(String datos) {
+        generadorReporte.generar(datos);
+    }
+}
+
+// Clase de prueba
+public class Main {
+    public static void main(String[] args) {
+        GeneradorReporte pdf = new ReportePDF();
+        GestorReportes gestor = new GestorReportes(pdf);
+        gestor.procesarReporte("Datos para PDF");
+
+        GeneradorReporte excel = new ReporteExcel();
+        gestor = new GestorReportes(excel);
+        gestor.procesarReporte("Datos para Excel");
+    }
+}

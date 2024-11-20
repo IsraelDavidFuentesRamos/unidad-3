@@ -1,0 +1,9 @@
+// Interfaz Jugador
+public interface Jugador {
+    void jugar();
+}
+
+// Clase Futbolista que no implementa el método jugar (Error de compilación)
+public class Futbolista implements Jugador {
+    // Falta implementar el método jugar, lo que genera un error.
+}

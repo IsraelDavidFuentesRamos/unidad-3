@@ -1,0 +1,5 @@
+public interface OperacionBancaria {
+    void realizarTransferencia(String cuentaDestino, double monto);
+    void realizarRetiro(double monto);
+    void pagarFactura(String empresa, double monto);
+}

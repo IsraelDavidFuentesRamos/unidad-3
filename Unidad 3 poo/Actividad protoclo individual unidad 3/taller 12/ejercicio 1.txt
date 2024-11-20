@@ -1,0 +1,31 @@
+// Interfaz Volador
+public interface Volador {
+    void volar();
+}
+
+// Interfaz Cantante
+public interface Cantante {
+    void cantar();
+}
+
+// Clase Ave implementa las interfaces Volador y Cantante
+public class Ave implements Volador, Cantante {
+    @Override
+    public void volar() {
+        System.out.println("El ave está volando.");
+    }
+
+    @Override
+    public void cantar() {
+        System.out.println("El ave está cantando.");
+    }
+}
+
+// Clase de prueba
+public class Main {
+    public static void main(String[] args) {
+        Ave miAve = new Ave();
+        miAve.volar();
+        miAve.cantar();
+    }
+}

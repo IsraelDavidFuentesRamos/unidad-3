@@ -1,0 +1,13 @@
+// Clase abstracta Animal
+public abstract class Animal {
+    public void metodoConcreto() {
+        System.out.println("Este es un método concreto.");
+    }
+
+    // Intento de método predeterminado (No permitido en clases abstractas)
+    /*
+    default void metodoDefault() {
+        System.out.println("Método predeterminado.");
+    }
+    */
+}

@@ -1,0 +1,7 @@
+public interface Reparacion {
+    void reparar(String equipo);
+}
+
+public interface Limpieza {
+    void limpiar(String area);
+}

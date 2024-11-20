@@ -1,0 +1,63 @@
+// Interfaz Almacenamiento
+public interface Almacenamiento {
+    void guardarArchivo(String nombre, String contenido);
+    String recuperarArchivo(String nombre);
+}
+
+// Implementación Local
+public class AlmacenamientoLocal implements Almacenamiento {
+    @Override
+    public void guardarArchivo(String nombre, String contenido) {
+        System.out.println("Guardando archivo localmente: " + nombre);
+    }
+
+    @Override
+    public String recuperarArchivo(String nombre) {
+        return "Contenido del archivo local: " + nombre;
+    }
+}
+
+// Implementación en la Nube
+public class AlmacenamientoNube implements Almacenamiento {
+    @Override
+    public void guardarArchivo(String nombre, String contenido) {
+        System.out.println("Guardando archivo en la nube: " + nombre);
+    }
+
+    @Override
+    public String recuperarArchivo(String nombre) {
+        return "Contenido del archivo en la nube: " + nombre;
+    }
+}
+
+// Gestor de Archivos
+public class GestorArchivos {
+    private final Almacenamiento almacenamiento;
+
+    public GestorArchivos(Almacenamiento almacenamiento) {
+        this.almacenamiento = almacenamiento;
+    }
+
+    public void guardar(String nombre, String contenido) {
+        almacenamiento.guardarArchivo(nombre, contenido);
+    }
+
+    public String recuperar(String nombre) {
+        return almacenamiento.recuperarArchivo(nombre);
+    }
+}
+
+// Clase de prueba
+public class Main {
+    public static void main(String[] args) {
+        Almacenamiento local = new AlmacenamientoLocal();
+        GestorArchivos gestor = new GestorArchivos(local);
+        gestor.guardar("archivo.txt", "Hola mundo");
+        System.out.println(gestor.recuperar("archivo.txt"));
+
+        Almacenamiento nube = new AlmacenamientoNube();
+        gestor = new GestorArchivos(nube);
+        gestor.guardar("archivo.txt", "Hola nube");
+        System.out.println(gestor.recuperar("archivo.txt"));
+    }
+}

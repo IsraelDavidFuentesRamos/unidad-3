@@ -1,0 +1,7 @@
+public interface Conducir {
+    void conducir();
+}
+
+public interface CargarMercancia {
+    void cargarMercancia();
+}

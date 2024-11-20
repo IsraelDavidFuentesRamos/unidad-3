@@ -1,0 +1,5 @@
+explicacion de los errores 
+
+Error 1: No se puede instanciar una clase abstracta porque están diseñadas solo como base para otras clases. Si intentamos hacerlo, el compilador generará un error.
+
+Error 2: Tener un método concreto en una clase abstracta sin ser sobrescrito es una mala práctica si se espera que las clases derivadas tengan implementaciones específicas, ya que rompe el propósito de personalizar comportamientos en cada clase hija.

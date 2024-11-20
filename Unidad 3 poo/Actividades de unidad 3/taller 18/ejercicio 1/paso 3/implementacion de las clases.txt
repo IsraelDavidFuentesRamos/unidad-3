@@ -1,0 +1,13 @@
+public class TecnicoMantenimiento implements Reparacion {
+    @Override
+    public void reparar(String equipo) {
+        System.out.println("Reparando el equipo: " + equipo);
+    }
+}
+
+public class PersonalLimpieza implements Limpieza {
+    @Override
+    public void limpiar(String area) {
+        System.out.println("Limpiando el área: " + area);
+    }
+}

@@ -1,0 +1,11 @@
+public interface Transferencia {
+    void realizarTransferencia(String cuentaDestino, double monto);
+}
+
+public interface Retiro {
+    void realizarRetiro(double monto);
+}
+
+public interface PagoFactura {
+    void pagarFactura(String empresa, double monto);
+}

@@ -1,0 +1,60 @@
+// Clase abstracta Empleado
+public abstract class Empleado {
+    protected String nombre;
+
+    public Empleado(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public abstract double calcularSalario(); // Método abstracto
+
+    public void mostrarDetalles() {
+        System.out.println("Nombre: " + nombre);
+        System.out.println("Salario: " + calcularSalario());
+    }
+}
+
+// Clase derivada Gerente
+public class Gerente extends Empleado {
+    private double salarioBase;
+    private double bono;
+
+    public Gerente(String nombre, double salarioBase, double bono) {
+        super(nombre);
+        this.salarioBase = salarioBase;
+        this.bono = bono;
+    }
+
+    @Override
+    public double calcularSalario() {
+        return salarioBase + bono;
+    }
+}
+
+// Clase derivada Vendedor
+public class Vendedor extends Empleado {
+    private double salarioBase;
+    private double comision;
+
+    public Vendedor(String nombre, double salarioBase, double comision) {
+        super(nombre);
+        this.salarioBase = salarioBase;
+        this.comision = comision;
+    }
+
+    @Override
+    public double calcularSalario() {
+        return salarioBase + comision;
+    }
+}
+
+// Ejemplo de uso
+public class Main {
+    public static void main(String[] args) {
+        Empleado gerente = new Gerente("Laura", 3000, 500);
+        gerente.mostrarDetalles();
+
+        Empleado vendedor = new Vendedor("Carlos", 2000, 300);
+        vendedor.mostrarDetalles();
+    }
+}

@@ -1,0 +1,5 @@
+Clase sin implementar métodos :
+Si una clase dice que usará una interfaz, debe escribir todos los métodos que la interfaz tiene. Si no lo hace, Java da un error porque no cumple con lo prometido.
+
+Implementación innecesaria de una interfaz:
+Aunque Java lo permite, usar una interfaz en una clase que no tiene lógica para esa acción (como una "Casa" que implemente "Movible") es una mala práctica y puede confundir a otros.

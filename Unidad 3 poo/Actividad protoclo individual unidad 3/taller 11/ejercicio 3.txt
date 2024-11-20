@@ -1,0 +1,21 @@
+// Error 1: Instanciar una clase abstracta
+public abstract class Vehiculo {
+    public abstract void conducir();
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Vehiculo vehiculo = new Vehiculo(); // Error de compilación: No se puede instanciar una clase abstracta
+    }
+}
+
+// Error 2: Método concreto que debería ser abstracto
+public abstract class Animal {
+    public void hacerSonido() { // Error de diseño: Este método debería ser abstracto
+        System.out.println("Sonido genérico de animal");
+    }
+}
+
+public class Perro extends Animal {
+    // No se sobrescribe el método hacerSonido
+}

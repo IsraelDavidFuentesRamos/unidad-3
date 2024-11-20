@@ -1,0 +1,1 @@
+Una clase concreta debe implementar todos los métodos de la interfaz que declara implementar. De lo contrario, genera un error de compilación.

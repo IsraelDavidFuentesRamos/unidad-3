@@ -1,0 +1,52 @@
+// Interfaz ServicioAutenticacion
+public interface ServicioAutenticacion {
+    boolean autenticar(String usuario, String contraseña);
+}
+
+// Implementación Local
+public class AutenticacionLocal implements ServicioAutenticacion {
+    @Override
+    public boolean autenticar(String usuario, String contraseña) {
+        System.out.println("Autenticación local para el usuario: " + usuario);
+        return "localUser".equals(usuario) && "12345".equals(contraseña);
+    }
+}
+
+// Implementación OAuth
+public class AutenticacionOAuth implements ServicioAutenticacion {
+    @Override
+    public boolean autenticar(String usuario, String contraseña) {
+        System.out.println("Autenticación mediante OAuth para el usuario: " + usuario);
+        return "oauthUser".equals(usuario) && "oauthToken".equals(contraseña);
+    }
+}
+
+// Gestor de Autenticación
+public class GestorAutenticacion {
+    private final ServicioAutenticacion servicioAutenticacion;
+
+    public GestorAutenticacion(ServicioAutenticacion servicioAutenticacion) {
+        this.servicioAutenticacion = servicioAutenticacion;
+    }
+
+    public void iniciarSesion(String usuario, String contraseña) {
+        if (servicioAutenticacion.autenticar(usuario, contraseña)) {
+            System.out.println("Inicio de sesión exitoso.");
+        } else {
+            System.out.println("Credenciales incorrectas.");
+        }
+    }
+}
+
+// Clase de prueba
+public class Main {
+    public static void main(String[] args) {
+        ServicioAutenticacion localAuth = new AutenticacionLocal();
+        GestorAutenticacion gestor = new GestorAutenticacion(localAuth);
+        gestor.iniciarSesion("localUser", "12345");
+
+        ServicioAutenticacion oauthAuth = new AutenticacionOAuth();
+        gestor = new GestorAutenticacion(oauthAuth);
+        gestor.iniciarSesion("oauthUser", "oauthToken");
+    }
+}

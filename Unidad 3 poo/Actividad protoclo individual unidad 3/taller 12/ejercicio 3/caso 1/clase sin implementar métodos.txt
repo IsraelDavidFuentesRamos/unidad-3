@@ -1,0 +1,9 @@
+// Interfaz Volador
+public interface Volador {
+    void volar();
+}
+
+// Clase que no implementa el método de la interfaz (Error)
+public class Avion implements Volador {
+    // Error: La clase Avion debe implementar el método volar()
+}

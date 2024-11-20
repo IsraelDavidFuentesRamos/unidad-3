@@ -1,0 +1,31 @@
+// Interfaz Nadador
+public interface Nadador {
+    void nadar();
+}
+
+// Interfaz Respirador
+public interface Respirador {
+    void respirar();
+}
+
+// Clase Pez implementa las interfaces Nadador y Respirador
+public class Pez implements Nadador, Respirador {
+    @Override
+    public void nadar() {
+        System.out.println("El pez está nadando.");
+    }
+
+    @Override
+    public void respirar() {
+        System.out.println("El pez está respirando bajo el agua.");
+    }
+}
+
+// Clase de prueba
+public class Main {
+    public static void main(String[] args) {
+        Pez miPez = new Pez();
+        miPez.nadar();
+        miPez.respirar();
+    }
+}

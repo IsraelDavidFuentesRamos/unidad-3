@@ -1,0 +1,12 @@
+// Interfaz Movible
+public interface Movible {
+    void moverse();
+}
+
+// Clase que implementa una interfaz innecesaria
+public class Casa implements Movible {
+    @Override
+    public void moverse() {
+        System.out.println("Las casas no se mueven."); // Esto no tiene sentido lógico
+    }
+}

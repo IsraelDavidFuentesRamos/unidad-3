@@ -1,0 +1,2 @@
+
+Los métodos predeterminados son exclusivos de las interfaces desde Java 8. No son compatibles con clases abstractas, ya que estas tienen un propósito diferente: combinar comportamiento definido y no definido.
